@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artemis Project</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Orbitron:wght@400..900&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 17px;
+            background-color: #000000;
+            color: #e3e3e3;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+        }
+        #loading-screen video {
+            width: 80%;
+            height: auto;
+        }
+        #loading-text {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+            animation: blink 1.5s step-end infinite;
+        }
+        @keyframes blink {
+            from, to {
+                visibility: hidden;
+            }
+            50% {
+                visibility: visible;
+            }
+        }
+    </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const loadingVideo = document.getElementById('loading-video');
+
+        loadingVideo.addEventListener('ended', function() {
+            loadingScreen.style.display = 'none';
+        });
+
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 10000); // 10초 후에 로딩 화면 제거
+    });
+</script>
+
+</body>
+
+</head>
+<body>
+    <body>
+        <div id="loading-screen">
+            <div id="loading-text">Loading...</div>
+            <video id="loading-video" autoplay muted>
+                <source src="img/Artemis.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+    </div>
+    </style>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <script src="cursor.js" defer></script>
+    <link rel="icon" href="img/favicon.svg" type="image/png">
+</head>
+<body>
+    <nav class="tm-nav">
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul id="tm-main-nav">
+            <li class="nav-item"><a href="#services" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#gallery" class="nav-link">Stakeholders</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">Nations</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Korea</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="intro" class="tm-section">
+            <div class="tm-section-col tm-content">
+                <div class="tm-media">
+                    <img src="img/gallery/img-11.jpg" alt="Intro image">
+                    <div class="tm-media-body">
+                        <h2>Artemis I</h2>
+                        <p class="tm-mb-20 tm-text-small">
+                            미국 플로리다주 케이프 커내버럴 우주군기지에서 오리온과 SLS로켓을 테스트하기 위해 발사한 임시 무인 달 궤도선. 오리온 우주선은 10일 간의 비행을 거쳐서 지상 60,000 km 궤도까지 진입한 뒤, 지구로 귀환할 예정이다. 1호 계획에는 사람을 대신해 우주복을 입은 마네킹 2개와 큐브위성이 탑재된다.
+                        </p>
+                        <span class="tm-text-secondary tm-media-span tm-text-small">2022. 11.15</span>
+                        <hr class="tm-hr tm-mr">
+                    </div>
+                </div>
+                <div class="tm-media">
+                    <img src="img/gallery/img-12.jpg" alt="Intro image">
+                    <div class="tm-media-body">
+                        <h2>Artemis II</h2>
+                        <p class="tm-mb-20 tm-text-small">
+                            첫번째 유인 시험 비행. 우주비행사 4인이 탑승해 지구 궤도에서 광범위한 실험을 수행한다. 속도를 올려 달 주위 자동 귀환 궤도로 진입한 뒤 지구로 귀환해 바다에 착수 예정이다.
+                        </p>
+                        <span class="tm-text-secondary tm-media-span tm-text-small">2024.11</span>
+                        <hr class="tm-hr tm-mr">
+                    </div>
+                </div>
+                <div class="tm-media">
+                    <img src="img/gallery/img-13.jpg" alt="Intro image">
+                    <div class="tm-media-body">
+                        <h2>Artemis III</h2>
+                        <p class="tm-mb-20 tm-text-small">
+                            우주비행사들은 달 남극 근처에 착륙하여, 1972년 아폴로 17호 이후 처음으로 인간이 달 표면을 탐사하게 된다.
+                        </p>
+                        <span class="tm-text-secondary tm-media-span tm-text-small">2025.12</span>
+                        <hr class="tm-hr tm-mr">
+                    </div>
+                </div>
+            </div>
+            <div class="tm-section-col tm-parallax" data-parallax="scroll" data-image-src="img/a.jpg"></div>
+        </div>
+
+        <div id="services" class="tm-section">
+            <div class="tm-section-col tm-content">
+                <h2 class="tm-text-primary">About</h2>
+                <p>
+                    아폴로 계획이 단순히 우주비행사들을 달로 보내고 기초적인 탐사를 하는 데 그친 것에 비해 아르테미스 계획은 더 깊이 있는 목표를 표방한다. 첫 번째는 '인류의 지속가능한 달 방문 실현'으로, 단발성 이벤트로 그치지 않고 유인 우주 탐사의 지평을 달을 포함하는 영역으로 확장하겠다는 것이다. 두 번째는 ‘2024의 인간 달 착륙'으로, 아르테미스 3호 단계에서 다인종, 성별로 구성된 우주인을 달 표면에 착륙시켜 탐사 임무를 수행하겠다는 것이다. 세 번째는 '달 탐사 미션의 연장과 화성 탐사를 위한 준비’로, 아르테미스 계획을 미래의 행성 탐사 계획의 연장선으로 만들겠다는 것이다.
+                </p>
+                <p>
+                    이 계획은 일부 달 탐사선의 개발을 민간에 위탁하는 등 민간 기업과 여러 국가들 간의 협력을 통해 이루어진다. 계획의 이름은 아폴로 계획에 맞춰 그리스 신화에 등장하는 아폴로의 쌍둥이 누이이자 달의 여신인 아르테미스의 이름에서 따왔다.
+                </p>
+                <span class="tm-text-secondary tm-media-span tm-text-small">「Jim Bridenstine」</span>
+                <hr class="tm-hr tm-ml tm-sm-mt-30">
+                <div class="tm-row">
+                    <div class="tm-col">
+                        <div class="tm-text-center tm-my-50">
+                            <i class="fas fa-street-view fa-3x"></i>
+                        </div>
+                        <p>
+                            "We're going to the Moon to stay, by 2024. And this time, when we go to the Moon, we will stay. We will use what we learn on the Moon to take the next giant leap – sending astronauts to Mars."
+                        </p>
+                    </div>
+                    <div class="tm-col">
+                        <div class="tm-text-center tm-my-50">
+                            <i class="fas fa-bullseye fa-3x"></i>
+                        </div>
+                        <p>
+                            "우리는 2024년까지 달에 갑니다. 그리고 우리가 달에 갈 때, 우리는 머무를 것입니다. 우리는 달에서 배운 것을 사용하여 다음 거대한 도약을 이룰 것입니다. 바로 우주비행사들을 화성으로 보내는 것입니다."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="tm-section-col tm-parallax" data-parallax="scroll" data-image-src="img/b.jpg"></div>
+        </div>
+
+        <div id="gallery" class="tm-content tm-content-small-top">
+            <div class="tm-gallery-container">
+                <h2 class="tm-text-primary tm-text-right tm-gallery-header">Stakeholders</h2>
+                <div class="tm-gallery tm-mb-80">
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-01.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>SLS 로켓 시스템 제공</p>
+                            <a href="https://www.l3harris.com/company/aerojet-rocketdyne"></a>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-02.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>달 탐사용 우주복 개발</p>
+                            <a href="https://www.axiomspace.com/"></a>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-03.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>ML2 설계,구축</p>
+                            <a href="https://www.bechtel.com/"></a>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-04.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>승무원 착륙선을 개발</p>
+                            <a href="https://www.blueorigin.com/"></a>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-05.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>발사로켓 제작</p>
+                            <a href="https://www.boeing.com/"></a>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-06.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>인간착륙 프로그램 개발</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-07.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>오리온 우주선 설계</p>
+                            <a href="https://www.lockheedmartin.com/en-kr/index.html"></a>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-08.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>우주정거장 개발</p>
+                            <a href="https://www.maxar.com/"></a>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-09.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>인간 착륙 시스템 개발</p>
+                            <a href="https://www.spacex.com/"></a>
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-goliath tm-gallery-item">
+                        <img src="img/gallery/tn/img-10.jpg" alt="Image"/>
+                        <figcaption>
+                            <p>원격 감지 레이더 개발</p>
+                            <a href="https://freedomphotonics.com/"></a>
+                        </figcaption>
+                    </figure>
+                    <p>
+                        과거의 달 탐사 프로젝트는 주로 정부 주도였던 반면, 아르테미스는 SpaceX, Boeing, Lockheed Martin 등 민간 기업이 중요한 역할을 맡고 있는 점이 차별화 된다. NASA는 아르테미스 프로젝트에 민간 기업의 참여를 통해 비용 효율성을 높이고 기술 혁신을 촉진하며 지속 가능한 우주 탐사를 추구한다. 이는 신속한 개발과 경제 활성화, 국제 협력을 가능하게 한다.
+                    </p>
+                </div>
+                <div class="tm-paging tm-mb-50"></div>
+            </div>
+        </div>
+
+        <div id="about" class="tm-section">
+            <div class="tm-section-col tm-content tm-content-small">
+                <h2 class="tm-text-primary">Nations</h2>
+                <p>
+                    현재 아르테미스 프로젝트에는 총 43개국이 참여하고 있다. 참여 국가들은 평화적 목적의 우주 탐사, 투명성, 상호 운용성, 긴급 지원, 우주 물체의 등록, 과학 데이터의 공개, 우주 유산 보존, 우주 자원 관리, 우주 활동의 분쟁 예방 및 궤도 쓰레기 관리 등의 원칙을 따르고 있다.
+                </p>
+                <p>
+                    해당 프로젝트는 미항공우주국 (NASA)과, 캐나다 우주국(CSA), 유럽우주기구(ESA), 일본 우주항공연구개발기구(JAXA)등이 공동으로 참여한다. 뿐만 아니라 유럽우주국(ESA)과 같은 국제 파트너들이 게이트웨이 우주 정거장에 기여하고 있으며, 이를 통해 우주 탐사의 지속 가능성을 높이고, 다양한 과학적 발견과 기술 혁신을 촉진하고 있다.
+                </p>
+                <hr class="tm-hr tm-mb-50">
+                <p class="tm-mb-50">
+                    <strong>Artemis Accords</strong> 이 협정은 2020년에 NASA와 미국 국무부의 주도로 처음 발표되었으며, 우주 탐사 활동의 10가지 주요 원칙을 강조한다.
+                </p>
+            </div>
+            <div class="tm-section-col tm-parallax" data-parallax="scroll" data-image-src="img/c.jpg"></div>
+        </div>
+
+        <div id="contact" class="tm-section">
+            <div class="tm-section-col tm-content tm-content-small">
+                <h2 class="tm-text-primary">Korea</h2>
+                <p>
+                    한국은 아르테미스 협정에 서명한 국가 중 하나로, 2021년 5월 24일에 공식적으로 아르테미스 협정에 서명하였다. 현재 한국은 우주 기반 위치확인 시스템(KPS)을 개발하여 글로벌 위치확인 시스템(GPS)과 호환성을 높이기 위해 미국과 협력하고 있다. 2024년 5월 출범한 한국우주항공청(KASA, Korea AeroSpace Administration)대한민국의 우주 산업 발전을 이끌어 가고 있다.
+                <br><br><br><br><br><br><br>
+                </p>
+                <footer class="tm-copyright tm-text-small">
+                    Artemis Project @2024_Digital Publishing_김예원
+                </footer>
+            </div>
+            <div class="tm-section-col tm-parallax tm-relative" data-parallax="scroll" data-image-src="img/d.jpg"></div>
+        </div>
+    </main>
+
+    <script src="js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+
+        $(function() {
+            const tmMainNav = $("#tm-main-nav");
+            tmMainNav.singlePageNav({ filter: ':not(.external)' });
+
+            $('.navbar-toggler').click(function(e) {
+                e.stopPropagation();
+                tmMainNav.toggleClass('show');
+            });
+
+            $("html").click(function(e) {
+                $("#tm-main-nav").removeClass("show");
+            });
+
+            $(".tm-btn-next").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800);
+                }
+            });
+
+            $('.tm-brand-icon').on('click', function(event) {
+                $('html, body').animate({
+                    scrollTop: $('#intro').offset().top
+                }, 800);
+            });
+
+            const galleryItems = document.querySelector(".tm-gallery").children;
+            const itemsPerPage = 10;
+            const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
+            const pageAttribute = 'data-page';
+
+            function setPagination(currentPage) {
+                for(let i = 1; i <= totalPages; i++) {
+                    var $pager = '';
+                    if(currentPage == i) {
+                        $pager = $('<a href="javascript:void(0);" class="active tm-paging-link" '+pageAttribute+'="'+i+'"></a>');
+                    } else {
+                        $pager = $('<a href="javascript:void(0);" class="tm-paging-link" '+pageAttribute+'="'+i+'"></a>');
+                    }
+                    $pager.html(i);
+                    $pager.click(function(){ 
+                        $('.tm-paging-link').removeClass("active");
+                        $(this).addClass('active');
+                        var page = $(this).eq(0).attr(pageAttribute);
+                        showItems(page);
+                    });
+                    $pager.appendTo($('.tm-paging'));
+                }
+            }
+
+            function showItems(currentPage) {
+                for(let i = 0; i < galleryItems.length; i++) {
+                    galleryItems[i].classList.remove("show");
+                    galleryItems[i].classList.add("hide");
+                    if(i >= (currentPage * itemsPerPage) - itemsPerPage && i < currentPage * itemsPerPage) {
+                        galleryItems[i].classList.remove("hide");
+                        galleryItems[i].classList.add("show");
+                    }
+                }
+            }
+
+            setPagination(1);
+            showItems(1);
+
+            $('.tm-gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: { enabled: true }
+            });
+        });
+    </script>
+</body>
+</html>
+
